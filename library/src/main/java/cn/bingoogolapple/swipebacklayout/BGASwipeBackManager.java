@@ -120,7 +120,7 @@ class BGASwipeBackManager implements Application.ActivityLifecycleCallbacks {
      * @return
      */
     public boolean isSwipeBackEnable() {
-        return mActivityStack.size() > 1;
+        return ignoreActivirySize || mActivityStack.size() > 1;
     }
 
     /**
@@ -131,5 +131,10 @@ class BGASwipeBackManager implements Application.ActivityLifecycleCallbacks {
      */
     public boolean isProblemView(View view) {
         return mProblemViewClassSet.contains(view.getClass());
+    }
+
+    private boolean ignoreActivirySize = false;
+    public void ignoreActivitySize(){
+        ignoreActivirySize = true;
     }
 }

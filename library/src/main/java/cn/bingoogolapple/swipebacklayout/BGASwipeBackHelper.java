@@ -203,6 +203,10 @@ public class BGASwipeBackHelper {
         return false;
     }
 
+    public void ignoreActivitySize(){
+        BGASwipeBackManager.getInstance().ignoreActivitySize();
+    }
+
     /**
      * 执行跳转到下一个 Activity 的动画
      */
